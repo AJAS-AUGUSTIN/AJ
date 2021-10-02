@@ -147,7 +147,7 @@
    let emailvalue = $("#email").val()
    let emailRegex = /^[a-zA-Z0-9.!#$%&’+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$/
    if (emailvalue == "") {
-     $("#error2").html("E-mail is mandatory!")
+     $("#error2").html("E-mail is Mandatory!")
    }
    else if (emailvalue.match(emailRegex)) {
      checkemail = true
@@ -170,7 +170,7 @@
    let phoneRegex = /[0-9]{10}/;
    let messageRegex = /^[-a-zA-Z-()]+(\s+[-a-zA-Z-()]+)*$/;
    if (phonevalue == "") {
-     $("#error3").html("Mobile number is mandatory!")
+     $("#error3").html("Mobile number is Mandatory!")
    }
    else if (phonevalue.match(phoneRegex)) {
      checkphone = true
