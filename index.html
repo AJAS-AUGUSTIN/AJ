@@ -25,6 +25,8 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="51">
@@ -51,6 +53,17 @@
             <a href="#contact" class="btn btn-outline-primary d-none d-lg-block">Hire Me</a>
         </div>
     </nav>
+
+    <!-- navbar  hide after selecting -->
+    <script>
+        $('.navbar-collapse a').click(function(){
+            $(".navbar-collapse").collapse('hide');
+        });
+    </script>
+
+
+    <!-- ends -->
+
     <!-- Navbar End -->
 
 
@@ -498,28 +511,32 @@
                 <div class="col-lg-8">
                     <div class="contact-form text-center">
                         <div id="success"></div>
-                        <form name="sentMessage" novalidate="novalidate" id="submit-form" action="">
+                        <form name="sentMessage" onsubmit="" novalidate="novalidate" id="submit-form" action="">
                             <div class="form-row">
                                 <div class="control-group col-sm-6">
                                     <input type="text" name="Name" class="form-control p-4" id="name" placeholder="Your Name"
                                         required="required" data-validation-required-message="Please enter your name" />
+                                        <div id="error1" style="color: red; margin-top: 3px;" ></div>
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="control-group col-sm-6">
                                     <input type="email" name="E-mail" class="form-control p-4" id="email" placeholder="Your Email"
                                         required="required" data-validation-required-message="Please enter your email" />
+                                        <div id="error2" style="color: red; margin-top: 3px;"></div>
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="control-group">
-                                <input type="text" class="form-control p-4" name="Subject" id="subject" placeholder="Subject"
-                                    required="required" data-validation-required-message="Please enter a subject" />
+                                <input type="text" class="form-control p-4" name="Subject" id="phone" placeholder="Phone Number"
+                                    required="required" data-validation-required-message="Please enter your Phone Number" />
+                                    <div id="error3" style="color: red; margin-top: 3px;"></div>
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="control-group">
                                 <textarea class="form-control py-3 px-4" name="Message" rows="5" id="message" placeholder="Message"
                                     required="required"
                                     data-validation-required-message="Please enter your message"></textarea>
+                                    <div id="error4" style="color: red; margin-top: 3px;"></div>
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div>
@@ -581,25 +598,7 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-    <script>
-        $("#submit-form").submit((e)=>{
-            e.preventDefault()
-            $.ajax({
-                url:"https://script.google.com/macros/s/AKfycbxZVpP0P80Etslxt1zzD9DEAgNEzElnrdtH7tQM2ioNj1Z5YNeggGcQNx9eiU6ZNTd0oA/exec",
-                data:$("#submit-form").serialize(),
-                method:"post",
-                success:function (response){
-                    alert("Form submitted successfully")
-                    window.location.reload()
-                    //window.location.href="https://google.com"
-                },
-                error:function (err){
-                    alert("Something Error")
     
-                }
-            })
-        })
-    </script>
 
 </body>
 
