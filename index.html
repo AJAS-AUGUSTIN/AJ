@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>AJ</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="img/Ajas_Augustin_no_background.jpg.png">
+  <link rel="icon" href="images/Ajas_Augustin_no_background.jpg.png">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
@@ -27,6 +27,7 @@
       font-family: 'Poppins', sans-serif;
       background-color: var(--offwhite);
       color: var(--deep-green);
+      overflow-x: hidden;
     }
 
     /* Navbar */
@@ -37,12 +38,15 @@
     .navbar-brand h1 {
       font-weight: 800;
       color: var(--deep-maroon);
+      font-size: clamp(1.5rem, 5vw, 2.5rem);
     }
 
     .navbar-nav .nav-link {
       font-weight: 500;
       color: var(--deep-green) !important;
       transition: color 0.3s ease;
+      font-size: clamp(0.8rem, 2.5vw, 1rem);
+      white-space: nowrap;
     }
 
     .navbar-nav .nav-link:hover {
@@ -70,8 +74,7 @@
     }
 
     .profile-img {
-      max-width: 420px;
-      width: 100%;
+      max-width: 100%;
       border-radius: 20px;
       box-shadow: 0 5px 20px rgba(0,0,0,0.2);
     }
@@ -80,11 +83,14 @@
       font-weight: 800;
       letter-spacing: 1px;
       color: var(--cream);
+      font-size: clamp(2rem, 8vw, 3.5rem);
+      word-wrap: break-word;
     }
 
     .typed-text-output {
       color: var(--offwhite);
       font-weight: 500;
+      word-wrap: break-word;
     }
 
     .typed-cursor {
@@ -105,6 +111,7 @@
 
     #about .col-lg-7 p {
       text-align: justify;
+      word-wrap: break-word;
     }
 
     section, .container-fluid {
@@ -112,7 +119,7 @@
       padding-bottom: 50px;
     }
 
-    /* Education Section */
+    /* Education / Experience Section */
     #education {
       background-color: var(--offwhite);
     }
@@ -128,6 +135,7 @@
       background: #fff;
       box-shadow: 0 3px 10px rgba(0,0,0,0.1);
       transition: 0.3s;
+      word-wrap: break-word;
     }
 
     #education .card:hover {
@@ -149,6 +157,7 @@
       flex-direction: column;
       height: 100%;
       transition: 0.3s;
+      word-wrap: break-word;
     }
 
     .project-card:hover {
@@ -197,12 +206,64 @@
       font-weight: 600;
     }
 
+    .social-icon {
+      font-size: 28px;
+      color: #E8D5C6;
+      transition: all 0.3s ease;
+    }
+
+    .social-icon:hover {
+      color: #622E39;
+      transform: translateY(-3px);
+    }
+
+    #contact i {
+      margin-right: 8px;
+    }
+
     footer {
       background: var(--deep-green);
       color: var(--cream);
       padding: 20px 0;
       text-align: center;
       font-size: 14px;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 992px) {
+      #home {
+        padding-top: 80px;
+      }
+      .display-3 {
+        font-size: clamp(2rem, 7vw, 3rem);
+      }
+      .profile-img {
+        max-width: 300px;
+      }
+      #about img {
+        max-width: 90%;
+      }
+      #education .card, .project-card {
+        margin-bottom: 20px;
+      }
+      .position-relative h1 {
+        font-size: clamp(2rem, 10vw, 4rem);
+      }
+    }
+
+    @media (max-width: 576px) {
+      .display-3 {
+        font-size: clamp(1.5rem, 9vw, 2.5rem);
+      }
+      h2.typed-text-output {
+        font-size: clamp(1rem, 5vw, 1.5rem);
+      }
+      #about .col-lg-7 {
+        margin-top: 20px;
+      }
+      .position-relative h1 {
+        font-size: clamp(1.5rem, 9vw, 3rem);
+      }
     }
   </style>
 </head>
@@ -234,7 +295,7 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-5 text-center">
-          <img class="shadow-sm profile-img" src="img/aj.jpg" alt="Profile">
+          <img class="shadow-sm profile-img" src="images/aj.jpg" alt="Profile">
         </div>
         <div class="col-lg-7 text-center text-lg-left mt-4 mt-lg-0">
           <h3 class="font-weight-normal mb-2">I'm</h3>
@@ -255,7 +316,7 @@
       </div>
       <div class="row align-items-center">
         <div class="col-lg-5 pb-4 pb-lg-0 d-flex justify-content-center">
-          <img class="img-fluid" src="img/Ajas-Augustin.jpg" alt="Ajas Augustin">
+          <img class="img-fluid" src="images/Ajas-Augustin.jpg" alt="Ajas Augustin">
         </div>
         <div class="col-lg-7">
           <h5 class="mb-3" style="color: var(--deep-maroon);">Backend Developer | Certified Penetration Tester</h5>
@@ -269,14 +330,13 @@
     </div>
   </div>
 
-  <!-- Education -->
-<div class="container-fluid py-5" id="education" style="background-color: #F7F2E7;">
+  <!-- Education / Experience -->
+  <div class="container-fluid py-5" id="education" style="background-color: #F7F2E7;">
     <div class="container">
       <div class="position-relative d-flex align-items-center justify-content-center mb-5">
         <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Experience</h1>
         <h1 class="position-absolute text-uppercase" style="color: #3E2C41;">My Experience</h1>
       </div>
-  
       <div class="row">
         <div class="col-md-4 mb-4">
           <div class="card p-4 h-100" style="background-color: #FFFFFF;">
@@ -286,12 +346,12 @@
           </div>
         </div>
         <div class="col-md-4 mb-4">
-            <div class="card p-4 h-100" style="background-color: #FFFFFF;">
-              <h5 style="color: #3E2C41;">Python Djano</h5>
-              <p class="mb-1" style="color: #012715;"><strong>Brototype</strong></p>
-              <p class="mb-0 text-muted">2021</p>
-            </div>
+          <div class="card p-4 h-100" style="background-color: #FFFFFF;">
+            <h5 style="color: #3E2C41;">Python Django</h5>
+            <p class="mb-1" style="color: #012715;"><strong>Brototype</strong></p>
+            <p class="mb-0 text-muted">2021</p>
           </div>
+        </div>
         <div class="col-md-4 mb-4">
           <div class="card p-4 h-100" style="background-color: #FFFFFF;">
             <h5 style="color: #3E2C41;">Certified Penetration Tester</h5>
@@ -302,7 +362,6 @@
       </div>
     </div>
   </div>
-  
 
   <!-- Projects -->
   <div class="container-fluid py-5" id="projects">
@@ -311,12 +370,9 @@
         <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Projects</h1>
         <h1 class="position-absolute text-uppercase" style="color: var(--deep-maroon);">Recent Projects</h1>
       </div>
-
       <div class="row">
-        <!-- Project 1 -->
-        <div class="col-lg-4 col-md-6 mb-4 d-flex">
+        <div class="col-lg-4 col-md-6 mb-4">
           <div class="project-card flex-fill d-flex flex-column">
-            <!-- <img src="img/project1.jpg" alt="Project 1"> -->
             <div class="card-body flex-grow-1 d-flex flex-column">
               <h5>Job Marketplace Platform</h5>
               <p class="flex-grow-1">A web platform where users can post jobs and workers can accept them. Once a job is completed, the poster can rate and review the worker. Built with Django Rest, this platform includes real-time job updates, user authentication, and a rating system to ensure trust and accountability.</p>
@@ -324,11 +380,8 @@
             </div>
           </div>
         </div>
-
-        <!-- Project 2 -->
-        <div class="col-lg-4 col-md-6 mb-4 d-flex">
+        <div class="col-lg-4 col-md-6 mb-4">
           <div class="project-card flex-fill d-flex flex-column">
-            <!-- <img src="img/project2.jpg" alt="Project 2"> -->
             <div class="card-body flex-grow-1 d-flex flex-column">
               <h5>Diwali Greetings Sharing App</h5>
               <p class="flex-grow-1">A lightweight web app built with HTML, CSS, and JavaScript that allows users to create personalized Diwali greetings. Users can input their name and share a unique greeting link or send it directly via WhatsApp. Built purely for fun using AI-generated messages, this project highlights creativity and frontend interactivity.</p>
@@ -336,11 +389,8 @@
             </div>
           </div>
         </div>
-
-        <!-- Project 3 -->
-        <div class="col-lg-4 col-md-6 mb-4 d-flex">
+        <div class="col-lg-4 col-md-6 mb-4">
           <div class="project-card flex-fill d-flex flex-column">
-            <!-- <img src="img/project3.jpg" alt="Project 3"> -->
             <div class="card-body flex-grow-1 d-flex flex-column">
               <h5>E-commerce Website</h5>
               <p class="flex-grow-1">A fully functional online store built using Django and Bootstrap. Features include product listings, shopping cart, secure checkout, and order tracking. This project demonstrates end-to-end development skills including database management, responsive UI design, and secure payment integration.</p>
@@ -348,16 +398,16 @@
             </div>
           </div>
         </div>
+      </div>
     </div>
   </div>
 
   <!-- Contact -->
-  <div id="contact" style="background-color: #012715; color: #E8D5C6; padding: 60px 0;">
+  <div id="contact">
     <div class="container text-center">
       <h3 style="font-weight: 600; color: #F0F0F8;">Get In Touch</h3>
       <p><i class="fas fa-envelope"></i> ajasaugustine@gmail.com</p>
       <p><i class="fas fa-map-marker-alt"></i> Kerala, India</p>
-  
       <div class="social-links mt-3">
         <a href="https://github.com/AJAS-AUGUSTIN/" target="_blank" class="mx-2 social-icon"><i class="fab fa-github"></i></a>
         <a href="https://www.linkedin.com/in/ajasaugustin/" target="_blank" class="mx-2 social-icon"><i class="fab fa-linkedin"></i></a>
@@ -365,21 +415,6 @@
       </div>
     </div>
   </div>
-
-  <style>
-    .social-icon {
-      font-size: 28px;
-      color: #E8D5C6;
-      transition: all 0.3s ease;
-    }
-    .social-icon:hover {
-      color: #622E39;
-      transform: translateY(-3px);
-    }
-    #contact i {
-      margin-right: 8px;
-    }
-  </style>
 
   <!-- Footer -->
   <footer>
@@ -391,7 +426,6 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script>
-    // Typed text effect
     var typed = new Typed('.typed-text-output', {
       strings: $('.typed-text').text().split(', '),
       typeSpeed: 80,
