@@ -1,434 +1,627 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <title>AJ</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="images/Ajas_Augustin_no_background.jpg.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajas Augustin | Backend Developer & Certified Penetration Tester</title>
+    <meta name="description"
+        content="Personal Portfolio of Ajas Augustin - Backend Developer with 3+ years experience in Python, Django, REST APIs, and Certified Penetration Testing.">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <!-- Open Graph SEO -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Ajas Augustin | Backend & Security Engineer">
+    <meta property="og:description" content="Explore my backend projects, professional experience, and technical skills.">
+    <meta property="og:image" content="images/ajas.augustin.jpg">
 
-  <!-- Font Awesome -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-
-  <!-- Bootstrap -->
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-
-  <style>
-    :root {
-      --deep-maroon: #622E39;
-      --deep-green: #012715;
-      --cream: #E8D5C6;
-      --offwhite: #F0F0F8;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: var(--offwhite);
-      color: var(--deep-green);
-      overflow-x: hidden;
-    }
-
-    /* Navbar */
-    .navbar {
-      background-color: var(--offwhite) !important;
-    }
-
-    .navbar-brand h1 {
-      font-weight: 800;
-      color: var(--deep-maroon);
-      font-size: clamp(1.5rem, 5vw, 2.5rem);
-    }
-
-    .navbar-nav .nav-link {
-      font-weight: 500;
-      color: var(--deep-green) !important;
-      transition: color 0.3s ease;
-      font-size: clamp(0.8rem, 2.5vw, 1rem);
-      white-space: nowrap;
-    }
-
-    .navbar-nav .nav-link:hover {
-      color: var(--deep-maroon) !important;
-    }
-
-    .btn-outline-primary {
-      color: var(--deep-maroon);
-      border-color: var(--deep-maroon);
-    }
-
-    .btn-outline-primary:hover {
-      background-color: var(--deep-maroon);
-      color: var(--offwhite);
-    }
-
-    /* Home Section */
-    #home {
-      min-height: 100vh;
-      padding-top: 120px;
-      background: linear-gradient(to right, var(--deep-green), var(--deep-maroon));
-      color: var(--offwhite);
-      display: flex;
-      align-items: center;
-    }
-
-    .profile-img {
-      max-width: 100%;
-      border-radius: 20px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-    }
-
-    .display-3 {
-      font-weight: 800;
-      letter-spacing: 1px;
-      color: var(--cream);
-      font-size: clamp(2rem, 8vw, 3.5rem);
-      word-wrap: break-word;
-    }
-
-    .typed-text-output {
-      color: var(--offwhite);
-      font-weight: 500;
-      word-wrap: break-word;
-    }
-
-    .typed-cursor {
-      color: var(--offwhite);
-    }
-
-    /* About Section */
-    #about {
-      background-color: var(--cream);
-    }
-
-    #about img {
-      border-radius: 12px;
-      width: 100%;
-      height: auto;
-      max-width: 75%;
-    }
-
-    #about .col-lg-7 p {
-      text-align: justify;
-      word-wrap: break-word;
-    }
-
-    section, .container-fluid {
-      padding-top: 50px;
-      padding-bottom: 50px;
-    }
-
-    /* Education / Experience Section */
-    #education {
-      background-color: var(--offwhite);
-    }
-
-    #education h5 {
-      font-weight: 600;
-      color: var(--deep-maroon);
-    }
-
-    #education .card {
-      border: none;
-      border-radius: 12px;
-      background: #fff;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-      transition: 0.3s;
-      word-wrap: break-word;
-    }
-
-    #education .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-    }
-
-    /* Projects Section */
-    #projects {
-      background-color: var(--offwhite);
-    }
-
-    .project-card {
-      background: #fff;
-      border-radius: 15px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      transition: 0.3s;
-      word-wrap: break-word;
-    }
-
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-    }
-
-    .project-card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-
-    .project-card .card-body {
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-    }
-
-    .project-card h5 {
-      font-weight: 600;
-      margin-bottom: 10px;
-      color: var(--deep-maroon);
-    }
-
-    .project-card a {
-      text-decoration: none;
-      color: var(--deep-green);
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-
-    .project-card a:hover {
-      color: var(--deep-maroon);
-    }
-
-    /* Contact Section */
-    #contact {
-      background: linear-gradient(to right, var(--deep-maroon), var(--deep-green));
-      color: var(--offwhite);
-      padding: 60px 0;
-    }
-
-    #contact h3 {
-      font-weight: 600;
-    }
-
-    .social-icon {
-      font-size: 28px;
-      color: #E8D5C6;
-      transition: all 0.3s ease;
-    }
-
-    .social-icon:hover {
-      color: #622E39;
-      transform: translateY(-3px);
-    }
-
-    #contact i {
-      margin-right: 8px;
-    }
-
-    footer {
-      background: var(--deep-green);
-      color: var(--cream);
-      padding: 20px 0;
-      text-align: center;
-      font-size: 14px;
-    }
-
-    /* Responsive tweaks */
-    @media (max-width: 992px) {
-      #home {
-        padding-top: 80px;
-      }
-      .display-3 {
-        font-size: clamp(2rem, 7vw, 3rem);
-      }
-      #about img {
-        max-width: 90%;
-      }
-      #education .card, .project-card {
-        margin-bottom: 20px;
-      }
-      .position-relative h1 {
-        font-size: clamp(2rem, 10vw, 4rem);
-      }
-    }
-
-    @media (max-width: 576px) {
-      .display-3 {
-        font-size: clamp(1.5rem, 9vw, 2.5rem);
-      }
-      h2.typed-text-output {
-        font-size: clamp(1rem, 5vw, 1.5rem);
-      }
-      #about .col-lg-7 {
-        margin-top: 20px;
-      }
-      .position-relative h1 {
-        font-size: clamp(1.5rem, 9vw, 3rem);
-      }
-    }
-  </style>
+    <!-- <link rel="icon" href="images/ajas.augustin.jpg" type="image/jpeg"> -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 </head>
 
-<body data-spy="scroll" data-target=".navbar" data-offset="51">
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress-bar" id="scrollProgressBar"></div>
 
-  <!-- Navbar -->
-  <nav class="navbar fixed-top shadow-sm navbar-expand-lg navbar-light py-3 py-lg-0 px-lg-5">
-    <a href="#home" class="navbar-brand ml-lg-3">
-      <h1 class="m-0 display-5"><span class="text-primary">A</span>J</h1>
-    </a>
-    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse px-lg-3" id="navbarCollapse">
-      <div class="navbar-nav m-auto py-0">
-        <a href="#home" class="nav-item nav-link active">Home</a>
-        <a href="#about" class="nav-item nav-link">About</a>
-        <a href="#education" class="nav-item nav-link">Experience</a>
-        <a href="#projects" class="nav-item nav-link">Projects</a>
-        <a href="#contact" class="nav-item nav-link">Contact</a>
-      </div>
-      <a href="#contact" class="btn btn-outline-primary d-none d-lg-block">Hire Me</a>
-    </div>
-  </nav>
+    <!-- ── Floating Navbar ── -->
+    <nav class="site-nav" id="siteNav">
+        <div class="nav-pill">
+            <span class="nav-indicator" id="navIndicator"></span>
+            <a href="#home" class="nav-link active" data-section="home">
+                <i class="fa-solid fa-house nav-icon"></i>
+                <span class="nav-label">Home</span>
+            </a>
+            <a href="#about" class="nav-link" data-section="about">
+                <i class="fa-solid fa-user nav-icon"></i>
+                <span class="nav-label">About</span>
+            </a>
+            <a href="#experience" class="nav-link" data-section="experience">
+                <i class="fa-solid fa-briefcase nav-icon"></i>
+                <span class="nav-label">Experience</span>
+            </a>
+            <a href="#projects" class="nav-link" data-section="projects">
+                <i class="fa-solid fa-code nav-icon"></i>
+                <span class="nav-label">Projects</span>
+            </a>
+            <a href="#skills" class="nav-link" data-section="skills">
+                <i class="fa-solid fa-layer-group nav-icon"></i>
+                <span class="nav-label">Skills</span>
+            </a>
+            <a href="#certifications" class="nav-link" data-section="certifications">
+                <i class="fa-solid fa-award nav-icon"></i>
+                <span class="nav-label">Certs</span>
+            </a>
+            <a href="#profiles" class="nav-link" data-section="profiles">
+                <i class="fa-solid fa-globe nav-icon"></i>
+                <span class="nav-label">Profiles</span>
+            </a>
+            <a href="#contact" class="nav-link" data-section="contact">
+                <i class="fa-solid fa-envelope nav-icon"></i>
+                <span class="nav-label">Contact</span>
+            </a>
+        </div>
+    </nav>
 
-  <!-- Home -->
-  <div class="container-fluid" id="home">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-5 text-center">
-          <img class="shadow-sm profile-img" src="images/ajas.augustin.jpg" alt="Profile">
-        </div>
-        <div class="col-lg-7 text-center text-lg-left mt-4 mt-lg-0">
-          <h3 class="font-weight-normal mb-2">I'm</h3>
-          <h1 class="display-3 text-uppercase mb-3">Ajas Augustin</h1>
-          <h2 class="typed-text-output d-inline font-weight-light"></h2>
-          <div class="typed-text d-none">Backend Developer, Certified Penetration Tester</div>
-        </div>
-      </div>
-    </div>
-  </div>
+    <!-- ── Preloader: Boot Sequence ── -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-particles" id="preloaderParticles"></div>
 
-  <!-- About -->
-  <div class="container-fluid py-5" id="about">
-    <div class="container">
-      <div class="position-relative d-flex align-items-center justify-content-center mb-5">
-        <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">About</h1>
-        <h1 class="position-absolute text-uppercase" style="color: var(--deep-maroon);">About Me</h1>
-      </div>
-      <div class="row align-items-center">
-        <div class="col-lg-5 pb-4 pb-lg-0 d-flex justify-content-center">
-          <img class="img-fluid" src="images/ajasaugustine.jpg" alt="Ajas Augustin">
-        </div>
-        <div class="col-lg-7">
-          <h5 class="mb-3" style="color: var(--deep-maroon);">Backend Developer | Certified Penetration Tester</h5>
-          <p>Backend Developer with 3+ years of hands-on experience in building and maintaining robust server-side applications. Certified Penetration Tester with a strong focus on security best practices. Self-taught developer with a solid understanding of modern technologies and a passion for continuous learning.</p>
-          <div class="mt-4">
-            <h6>Email: <span class="text-secondary">ajasaugustine@gmail.com</span></h6>
-            <h6>Location: <span class="text-secondary">Kerala, India</span></h6>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Education / Experience -->
-  <div class="container-fluid py-5" id="education" style="background-color: #F7F2E7;">
-    <div class="container">
-      <div class="position-relative d-flex align-items-center justify-content-center mb-5">
-        <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Experience</h1>
-        <h1 class="position-absolute text-uppercase" style="color: #3E2C41;">My Experience</h1>
-      </div>
-      <div class="row">
-        <div class="col-md-4 mb-4">
-          <div class="card p-4 h-100" style="background-color: #FFFFFF;">
-            <h5 style="color: #3E2C41;">Python Django Developer</h5>
-            <p class="mb-1" style="color: #012715;"><strong>Cied Technologies</strong></p>
-            <p class="mb-0 text-muted">2022 - Present</p>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="card p-4 h-100" style="background-color: #FFFFFF;">
-            <h5 style="color: #3E2C41;">Python Django</h5>
-            <p class="mb-1" style="color: #012715;"><strong>Brototype</strong></p>
-            <p class="mb-0 text-muted">2021</p>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="card p-4 h-100" style="background-color: #FFFFFF;">
-            <h5 style="color: #3E2C41;">Certified Penetration Tester</h5>
-            <p class="mb-1" style="color: #012715;"><strong>RedTeam Hacker Academy</strong></p>
-            <p class="mb-0 text-muted">2020</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Projects -->
-  <div class="container-fluid py-5" id="projects">
-    <div class="container">
-      <div class="position-relative d-flex align-items-center justify-content-center mb-5">
-        <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Projects</h1>
-        <h1 class="position-absolute text-uppercase" style="color: var(--deep-maroon);">Recent Projects</h1>
-      </div>
-      <div class="row">
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="project-card flex-fill d-flex flex-column">
-            <div class="card-body flex-grow-1 d-flex flex-column">
-              <h5>Job Marketplace Platform</h5>
-              <p class="flex-grow-1">A web platform where users can post jobs and workers can accept them. Once a job is completed, the poster can rate and review the worker. Built with Django Rest, this platform includes real-time job updates, user authentication, and a rating system to ensure trust and accountability.</p>
-              <a href="https://github.com/AJAS-AUGUSTIN/Tasker" target="_blank" class="mt-auto">View Project <i class="fas fa-arrow-right"></i></a>
+        <!-- Branding -->
+        <div class="preloader-brand">
+            <div class="preloader-brand-main">
+                <span class="preloader-brand-name">Ajas</span><span class="preloader-brand-accent">Augustin</span>
             </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="project-card flex-fill d-flex flex-column">
-            <div class="card-body flex-grow-1 d-flex flex-column">
-              <h5>Diwali Greetings Sharing App</h5>
-              <p class="flex-grow-1">A lightweight web app built with HTML, CSS, and JavaScript that allows users to create personalized Diwali greetings. Users can input their name and share a unique greeting link or send it directly via WhatsApp. Built purely for fun using AI-generated messages, this project highlights creativity and frontend interactivity.</p>
-              <a href="https://github.com/AJAS-AUGUSTIN/diwali-greetings" target="_blank" class="mt-auto">View Project <i class="fas fa-arrow-right"></i></a>
+            <div class="preloader-brand-subtitle">
+                <span class="subtitle-line"></span>
+                <span>Backend & Cyber Security</span>
+                <span class="subtitle-line"></span>
             </div>
-          </div>
         </div>
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="project-card flex-fill d-flex flex-column">
-            <div class="card-body flex-grow-1 d-flex flex-column">
-              <h5>E-commerce Website</h5>
-              <p class="flex-grow-1">A fully functional online store built using Django and Bootstrap. Features include product listings, shopping cart, secure checkout, and order tracking. This project demonstrates end-to-end development skills including database management, responsive UI design, and secure payment integration.</p>
-              <a href="https://github.com/AJAS-AUGUSTIN/aphrodite" target="_blank" class="mt-auto">View Project <i class="fas fa-arrow-right"></i></a>
+
+        <!-- Sleek Loading Bar -->
+        <div class="preloader-sleek-track">
+            <div class="preloader-sleek-fill" id="preloaderSleekFill"></div>
+        </div>
+
+        <!-- Cycling Tagline -->
+        <div class="preloader-tagline">
+            <span class="tagline-word" style="--w:0">Architect.</span>
+            <span class="tagline-word" style="--w:1">Secure.</span>
+            <span class="tagline-word" style="--w:2">Develop.</span>
+            <span class="tagline-word" style="--w:3">Deploy.</span>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+
+    <!-- 3D Starfield & Grid Background -->
+    <div class="background-container">
+        <canvas id="bg-canvas"></canvas>
+        <div class="grid-overlay"></div>
+    </div>
+
+    <!-- ── Hero Section ── -->
+    <main class="hero" id="home">
+        <div class="floating-icon icon-top-left">
+            <i class="fa-solid fa-code"></i>
+        </div>
+        <div class="floating-icon icon-top-right">
+            <i class="fa-solid fa-shield-halved"></i>
+        </div>
+        <div class="floating-icon icon-bottom-left">
+            <i class="fa-solid fa-server"></i>
+        </div>
+        <div class="floating-icon icon-bottom-right">
+            <i class="fa-solid fa-terminal"></i>
+        </div>
+
+        <div class="content-wrapper">
+            <!-- <h2 class="sub-title">Woah! You Landed on the Portfolio Website of The</h2> -->
+            <h1 class="sr-only">Ajas Augustin - Backend Developer & Penetration Tester</h1>
+            <h2 class="main-title">
+                <span class="purple-text" id="typing-text"></span>
+            </h2>
+            <h5 class="year">Ajas Augustin</h5>
+            <div class="hero-buttons">
+                <a href="https://www.linkedin.com/in/ajasaugustin/" target="_blank" class="btn-resume">Let's Connect</a>
+                <a href="javascript:void(0)" id="openResumeBtn" class="btn-resume">View Resume</a>
             </div>
-          </div>
         </div>
-      </div>
+    </main>
+
+    <!-- ── About Section ── -->
+    <section class="about-section" id="about">
+        <div class="glass-card scroll-reveal">
+            <h2>About Me - <span class="purple-text">Behind The Code!</span></h2>
+            <p>
+                Backend Developer with 3+ years of hands-on experience in building 
+                and maintaining robust server-side applications. Certified Penetration 
+                Tester with a strong focus on security best practices. Self-taught 
+                developer with a solid understanding of modern technologies and a 
+                passion for continuous learning.
+                <br><br>
+            </p>
+        </div>
+    </section>
+
+    <!-- ── Work Experience Section ── -->
+    <section class="projects-section" id="experience">
+        <h2 class="section-title">Work Experience - <span class="purple-text">Professional Journey!</span></h2>
+        <div class="timeline">
+            <div class="timeline-line">
+                <div class="timeline-progress"></div>
+            </div>
+
+            <div class="timeline-item left">
+                <div class="timeline-number">01</div>
+                <div class="timeline-content">
+                    <div class="project-tag">Cied Technologies</div>
+                    <h3>Python Django Developer</h3>
+                    <p>
+                        • Architecting, developing, and maintaining high-performance server-side web applications and REST APIs using Python and Django.<br><br>
+                        • Collaborating with cross-functional teams to design database schemas, implement secure authentication workflows, and optimize query performance.
+                    </p>
+                </div>
+                <div class="timeline-date">2022 – PRESENT</div>
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="timeline-item right">
+                <div class="timeline-number">02</div>
+                <div class="timeline-content">
+                    <div class="project-tag">Brototype</div>
+                    <h3>Python Django Developer Intern</h3>
+                    <p>
+                        • Engineered comprehensive full-stack and backend applications from scratch with Django, PostgreSQL, and Bootstrap.<br><br>
+                        • Mastered Object-Oriented Programming (OOP), MVC/MVT architecture, data structures, and database query optimizations.
+                    </p>
+                </div>
+                <div class="timeline-date">2021 – 2022</div>
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="timeline-item left">
+                <div class="timeline-number">03</div>
+                <div class="timeline-content">
+                    <div class="project-tag">RedTeam Hacker Academy</div>
+                    <h3>Certified Penetration Tester Intern</h3>
+                    <p>
+                        • Performed network vulnerability assessments, web application penetration tests, and OWASP Top 10 security audits.<br><br>
+                        • Gained hands-on experience with tools such as Burp Suite, Nmap, Metasploit, Wireshark, and Linux privilege escalation techniques.
+                    </p>
+                </div>
+                <div class="timeline-date">2020 – 2021</div>
+                <div class="timeline-dot"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Projects Showcase Section ── -->
+    <section class="projects-section" id="projects">
+        <h2 class="section-title">Projects Showcase - <span class="purple-text">What I've Built!</span></h2>
+        <div class="experience-grid">
+
+            <div class="experience-card">
+                <div class="experience-date"></div>
+                <div class="project-tag">Django REST Platform</div>
+                <h3>Tasker - Job Marketplace</h3>
+                <p>
+                    A scalable web platform connecting job posters and service professionals with real-time job bidding,
+                    secure JWT authentication, and a peer review & rating system to ensure trust and accountability across transactions.
+                </p>
+                <div class="project-links-wrapper">
+                    <a href="https://github.com/ajas-AUGUSTIN/Tasker" target="_blank" class="project-btn">
+                        <i class="fa-brands fa-github"></i> GitHub
+                    </a>
+                    <!-- <a href="javascript:void(0)" class="project-btn inactive-btn">
+                        <i class="fa-regular fa-eye"></i> Live Soon
+                    </a> -->
+                </div>
+            </div>
+
+            <div class="experience-card">
+                <div class="experience-date"></div>
+                <div class="project-tag">Full-Stack Django</div>
+                <h3>Aphrodite E-commerce</h3>
+                <p>
+                    A fully functional online store built using Django and Bootstrap. Features include comprehensive product catalogs,
+                    session-based shopping carts, secure checkout, payment integration, and real-time order tracking.
+                </p>
+                <div class="project-links-wrapper">
+                    <a href="https://github.com/ajas-AUGUSTIN/aphrodite" target="_blank" class="project-btn">
+                        <i class="fa-brands fa-github"></i> GitHub
+                    </a>
+                    <!-- <a href="javascript:void(0)" class="project-btn inactive-btn">
+                        <i class="fa-regular fa-eye"></i> Live Soon
+                    </a> -->
+                </div>
+            </div>
+
+            <div class="experience-card">
+                <div class="experience-date"></div>
+                <div class="project-tag">Frontend & Interactivity</div>
+                <h3>Diwali Greetings Sharing App</h3>
+                <p>
+                    A lightweight interactive web application that allows users to generate and share personalized festive greetings
+                    via unique custom URLs and direct WhatsApp integration, showcasing responsive DOM manipulation and creative frontend styling.
+                </p>
+                <div class="project-links-wrapper">
+                    <a href="https://github.com/ajas-AUGUSTIN/diwali-greetings" target="_blank" class="project-btn">
+                        <i class="fa-brands fa-github"></i> GitHub
+                    </a>
+                    <!-- <a href="https://ajas-augustin.github.io/diwali-greetings/" target="_blank" class="project-btn">
+                        <i class="fa-regular fa-eye"></i> View Live
+                    </a> -->
+                </div>
+            </div>
+
+            <!-- <div class="experience-card">
+                <div class="experience-date">2K24</div>
+                <div class="project-tag">Security & Pentesting</div>
+                <h3>Vulnerability Assessment Suite</h3>
+                <p>
+                    Automated penetration testing lab and scripting tools configured to probe web endpoints for OWASP Top 10 vulnerabilities,
+                    misconfigured headers, SQL injections, and auth bypasses with automated reporting and risk classification.
+                </p>
+                <div class="project-links-wrapper">
+                    <a href="https://github.com/ajas-AUGUSTIN/" target="_blank" class="project-btn">
+                        <i class="fa-brands fa-github"></i> GitHub
+                    </a>
+                    <a href="javascript:void(0)" class="project-btn inactive-btn">
+                        <i class="fa-solid fa-lock"></i> Lab Project
+                    </a> 
+                </div>
+            </div> -->
+
+        </div>
+    </section>
+
+    <!-- ── Technical Skills Section ── -->
+    <section class="skills-section" id="skills">
+        <h2 class="section-title">Technical Skills - <span class="purple-text">Core Expertise!</span></h2>
+
+        <div class="skill-filters" id="skillFilters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="backend">Backend</button>
+            <button class="filter-btn" data-filter="security">Security</button>
+            <button class="filter-btn" data-filter="languages">Languages</button>
+            <button class="filter-btn" data-filter="databases">Databases</button>
+            <button class="filter-btn" data-filter="tools">Tools</button>
+        </div>
+
+        <div class="skill-grid" id="skillGrid">
+
+            <!-- Languages -->
+            <div class="skill-card" data-category="languages">
+                <i class="devicon-python-plain colored"></i>
+                <span>Python</span>
+            </div>
+            <!-- <div class="skill-card" data-category="languages">
+                <i class="devicon-cplusplus-plain colored"></i>
+                <span>C / C++</span>
+            </div> -->
+            <div class="skill-card" data-category="languages">
+                <i class="fa-solid fa-database" style="color: #38bdf8;"></i>
+                <span>SQL</span>
+            </div>
+            <!-- <div class="skill-card" data-category="languages">
+                <i class="devicon-javascript-plain colored"></i>
+                <span>JavaScript</span>
+            </div> -->
+            <!-- <div class="skill-card" data-category="languages">
+                <i class="devicon-bash-plain"></i>
+                <span>Bash / Shell</span>
+            </div> -->
+
+            <!-- Backend -->
+            <div class="skill-card" data-category="backend">
+                <i class="devicon-django-plain" style="color: #4ade80;"></i>
+                <span>Django</span>
+            </div>
+            <div class="skill-card" data-category="backend">
+                <i class="fa-solid fa-server" style="color: #a855f7;"></i>
+                <span>Django REST</span>
+            </div>
+            <div class="skill-card" data-category="backend">
+                <i class="devicon-fastapi-plain colored"></i>
+                <span>FastAPI</span>
+            </div>
+            <!-- <div class="skill-card" data-category="backend">
+                <i class="devicon-flask-original"></i>
+                <span>Flask</span>
+            </div> -->
+            <div class="skill-card" data-category="backend">
+                <i class="fa-solid fa-network-wired" style="color: #fbbf24;"></i>
+                <span>REST APIs</span>
+            </div>
+
+            <!-- Security -->
+            <!-- <div class="skill-card" data-category="security">
+                <i class="fa-solid fa-user-secret" style="color: #e5e7eb;"></i>
+                <span>Pen Testing</span>
+            </div>
+            <div class="skill-card" data-category="security">
+                <i class="fa-solid fa-shield-virus" style="color: #ef4444;"></i>
+                <span>OWASP Top 10</span>
+            </div>
+            <div class="skill-card" data-category="security">
+                <i class="fa-solid fa-bug" style="color: #f97316;"></i>
+                <span>Burp Suite</span>
+            </div>
+            <div class="skill-card" data-category="security">
+                <i class="fa-solid fa-magnifying-glass-location" style="color: #38bdf8;"></i>
+                <span>Nmap</span>
+            </div>
+            <div class="skill-card" data-category="security">
+                <i class="fa-solid fa-terminal" style="color: #4ade80;"></i>
+                <span>Metasploit</span>
+            </div> -->
+
+            <!-- Databases -->
+            <div class="skill-card" data-category="databases">
+                <i class="devicon-postgresql-plain colored"></i>
+                <span>PostgreSQL</span>
+            </div>
+            <div class="skill-card" data-category="databases">
+                <i class="devicon-mysql-plain colored"></i>
+                <span>MySQL</span>
+            </div>
+            <div class="skill-card" data-category="databases">
+                <i class="devicon-redis-plain colored"></i>
+                <span>Redis</span>
+            </div>
+            <div class="skill-card" data-category="databases">
+                <i class="devicon-sqlite-plain colored"></i>
+                <span>SQLite</span>
+            </div>
+            <!-- <div class="skill-card" data-category="databases">
+                <i class="devicon-mongodb-plain colored"></i>
+                <span>MongoDB</span>
+            </div> -->
+
+            <!-- Tools -->
+            <div class="skill-card" data-category="tools">
+                <i class="devicon-git-plain colored"></i>
+                <span>Git</span>
+            </div>
+            <div class="skill-card" data-category="tools">
+                <i class="devicon-github-original"></i>
+                <span>GitHub</span>
+            </div>
+            <!-- <div class="skill-card" data-category="tools">
+                <i class="devicon-docker-plain colored"></i>
+                <span>Docker</span>
+            </div> -->
+            <div class="skill-card" data-category="tools">
+                <i class="devicon-postman-plain colored"></i>
+                <span>Postman</span>
+            </div>
+            <div class="skill-card" data-category="tools">
+                <i class="devicon-linux-plain"></i>
+                <span>Linux / Kali</span>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ── Certifications Section ── -->
+    <!-- <section class="certifications-section" id="certifications">
+        <h2 class="section-title">Certifications - <span class="purple-text">Learning Milestones!</span></h2>
+
+        <div class="cert-grid">
+
+            <div class="cert-item">
+                <div class="cert-img-wrapper">
+                    <i class="fa-solid fa-shield-halved cert-icon-fallback"></i>
+                    <div class="cert-overlay">
+                        <a href="https://www.linkedin.com/in/testaugustin/" target="_blank" class="cert-overlay-link">
+                            <span>View Credentials</span>
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="cert-info">
+                    <h3>Certified Penetration Tester (CPT)</h3>
+                    <p>RedTeam Hacker Academy certification demonstrating rigorous practical expertise in web vulnerability exploitation, network scanning, and security auditing.</p>
+                </div>
+            </div>
+
+            <div class="cert-item">
+                <div class="cert-img-wrapper">
+                    <i class="fa-brands fa-python cert-icon-fallback" style="color: #38bdf8;"></i>
+                    <div class="cert-overlay">
+                        <a href="https://www.linkedin.com/in/testaugustin/" target="_blank" class="cert-overlay-link">
+                            <span>View Credentials</span>
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="cert-info">
+                    <h3>Python & Django Architecture</h3>
+                    <p>Comprehensive full-stack & backend training at Brototype covering MVC/MVT patterns, relational database design, ORM queries, and REST APIs.</p>
+                </div>
+            </div>
+
+            <div class="cert-item">
+                <div class="cert-img-wrapper">
+                    <i class="fa-solid fa-lock cert-icon-fallback" style="color: #4ade80;"></i>
+                    <div class="cert-overlay">
+                        <a href="https://www.linkedin.com/in/testaugustin/" target="_blank" class="cert-overlay-link">
+                            <span>View Credentials</span>
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="cert-info">
+                    <h3>Web Security & OWASP Top 10</h3>
+                    <p>Specialized training in application security defenses, input sanitization, cross-site scripting (XSS), SQL injection prevention, and authentication safeguards.</p>
+                </div>
+            </div>
+
+        </div>
+    </section> -->
+
+    <!-- ── Web Presence Section ── -->
+    <section class="profiles-section" id="profiles">
+        <h2 class="section-title">Web Presence - <span class="purple-text">Dev Network!</span></h2>
+        <div class="profile-header">
+            <div class="profile-img-main">
+                <img src="images/ajasaugustine.jpg" alt="Ajas Augustin" onerror="this.src='images/ajasaugustine.jpg'">
+            </div>
+            <div class="profile-text">
+                <p class="purple-text">@ajasaugustin</p>
+            </div>
+        </div>
+
+        <div class="profiles-grid">
+
+            <a href="https://www.linkedin.com/in/ajasaugustin/" target="_blank" class="profile-card">
+                <div class="profile-icon">
+                    <i class="fa-brands fa-linkedin"></i>
+                </div>
+                <div class="profile-info">
+                    <h3>LinkedIn</h3>
+                    <p>Connect</p>
+                </div>
+            </a>
+
+            <a href="https://github.com/ajas-AUGUSTIN/" target="_blank" class="profile-card">
+                <div class="profile-icon">
+                    <i class="fa-brands fa-github"></i>
+                </div>
+                <div class="profile-info">
+                    <h3>GitHub</h3>
+                    <p>Commit</p>
+                </div>
+            </a>
+
+            <a href="https://instagram.com/ajas.augustin/" target="_blank" class="profile-card">
+                <div class="profile-icon">
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+                <div class="profile-info">
+                    <h3>Instagram</h3>
+                    <p>Follow</p>
+                </div>
+            </a>
+
+            <a href="mailto:ajasaugustine@gmail.com" class="profile-card">
+                <div class="profile-icon">
+                    <i class="fa-solid fa-envelope" style="color: #ea4335;"></i>
+                </div>
+                <div class="profile-info">
+                    <h3>Direct Mail</h3>
+                    <p>Inquire</p>
+                </div>
+            </a>
+        </div>
+        <p class="profile-note">You can explore further by clicking on any of the profile cards above!</p>
+    </section>
+
+    <!-- ── Contact Section ── -->
+    <!-- <section class="contact-section" id="contact">
+        <div class="contact-container">
+            <h2 class="section-title">Get In Touch - <span class="purple-text">Ask Me Anything!</span></h2>
+            <h4 class="contact-note">
+                Ready to collaborate or discuss backend architecture, API engineering, or security audits?<br>
+                I'm always open to new opportunities and interesting conversations.
+            </h4>
+            <div class="contact-card">
+                <form id="contactForm" class="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" required placeholder=" " autocomplete="off">
+                        <label for="name">Name</label>
+                        <i class="fa-solid fa-user input-icon"></i>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" required placeholder=" " autocomplete="off">
+                        <label for="email">Email</label>
+                        <i class="fa-solid fa-envelope input-icon"></i>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="4" required placeholder=" "></textarea>
+                        <label for="message">Message</label>
+                        <i class="fa-solid fa-comment input-icon"></i>
+                    </div>
+                    <button type="submit" class="btn-resume btn-submit">
+                        <span>Send Message</span>
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- ── Footer ── -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h2 class="footer-logo">Ajas<span class="purple-text">Augustin</span></h2>
+                <!-- <p class="footer-tagline">Innovation at the Intersection of Scalable Architecture and Cyber Security!</p> -->
+            </div>
+
+            <ul class="footer-nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#profiles">Profiles</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <div class="footer-socials">
+                <a href="https://www.linkedin.com/in/ajasaugustin/" target="_blank" class="social-link linkedin" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/AJAS-AUGUSTIN/" target="_blank" class="social-link github" aria-label="GitHub">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://instagram.com/ajas.augustin/" target="_blank" class="social-link instagram" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="mailto:ajasaugustine@gmail.com" class="social-link email" aria-label="Email">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Ajas Augustin. All rights reserved.</p>
+            <button id="backToTop" class="back-to-top" aria-label="Back to Top">
+                <i class="fa-solid fa-arrow-up"></i>
+            </button>
+        </div>
+    </footer>
+
+    <!-- ── Resume Modal ── -->
+    <div id="resumeModal" class="resume-modal">
+        <div class="resume-modal-content glass-card">
+            <span class="close-modal" id="closeResumeBtn">&times;</span>
+            <h2 style="margin-bottom: 20px;">My Resume - <span class="purple-text">On Paper!</span></h2>
+            <div class="resume-iframe-container">
+                <p style="color: #9ca3af; text-align: center; padding: 20px;">
+                    Resume document preview.<br><br>
+                    <a href="mailto:ajasaugustine@gmail.com?subject=Resume%20Request" class="btn-resume" style="margin-top: 15px;">
+                        Request Resume via Email
+                    </a>
+                </p>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <!-- Contact -->
-  <div id="contact">
-    <div class="container text-center">
-      <h3 style="font-weight: 600; color: #F0F0F8;">Get In Touch</h3>
-      <p><i class="fas fa-envelope"></i> ajasaugustine@gmail.com</p>
-      <p><i class="fas fa-map-marker-alt"></i> Kerala, India</p>
-      <div class="social-links mt-3">
-        <a href="https://github.com/AJAS-AUGUSTIN/" target="_blank" class="mx-2 social-icon"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/ajasaugustin/" target="_blank" class="mx-2 social-icon"><i class="fab fa-linkedin"></i></a>
-        <a href="https://instagram.com/ajas.augustin/" target="_blank" class="mx-2 social-icon"><i class="fab fa-instagram"></i></a>
-      </div>
-    </div>
-  </div>
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
-  <!-- Footer -->
-  <footer>
-    © 2025 Ajas Augustin. All Rights Reserved.
-  </footer>
-
-  <!-- JS -->
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  <script>
-    var typed = new Typed('.typed-text-output', {
-      strings: $('.typed-text').text().split(', '),
-      typeSpeed: 80,
-      backSpeed: 40,
-      loop: true
-    });
-  </script>
+    <script src="3d_background.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>
